@@ -8,7 +8,6 @@ function setup() {
     }//end inside ForLoop
   }//end for loop
 }//end Setup
-
 function draw() {
   background(220);
   for(var i =0 ; i<5 ; i++){
@@ -17,6 +16,10 @@ function draw() {
     }
   }//end for loop
   
-  textSize(20)
-  text(key,30,30);
 }
+function keyReleased(){
+  /*this function gets called automatically
+  everytime a key on the keyboard is released
+  */
+  b[4][4].letter = key;
+}//end keyReleased
