@@ -8,6 +8,6 @@ function Box(x,y,w,h,letter){
   this.display = function(){
     rect(this.x, this.y, this.w, this.h);
     textSize(26);
-    text(this.letter, this.x +5, this.y + 5)
+    text(this.letter, this.x +15, this.y + 30)
   }//end display
 }//end Box
