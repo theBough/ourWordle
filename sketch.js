@@ -21,5 +21,5 @@ function keyReleased(){
   /*this function gets called automatically
   everytime a key on the keyboard is released
   */
-  b[4][4].letter = key;
+  b[0][0].letter = key;
 }//end keyReleased
