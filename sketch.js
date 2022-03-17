@@ -40,4 +40,19 @@ function keyReleased(){
   */
   b[activeX][activeY].letter = key;
   activeX += 1
+  if(activeX == 5){
+    checkRow();
+  }
 }//end keyReleased
+function checkRow(){
+  /*
+  Check Row is going to the letters guessed and 
+  turn into a word and compare agaisnt the
+  secret word.
+  */
+  var theirGuess = "";
+  for(i=0;i<5;i++){
+    theirGuess += b[i][activeY].letter;
+  }//end loop
+  console.log(theirGuess)
+}//end checkRow
