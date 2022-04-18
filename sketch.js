@@ -42,13 +42,22 @@ function keyReleased() {
   /*this function gets called automatically
   everytime a key on the keyboard is released
   */
-  if (((key.charCodeAt(0) > 64 && key.charCodeAt(0) < 91) ||
+  if (
+    ((key.charCodeAt(0) > 64 && key.charCodeAt(0) < 91) ||
       (key.charCodeAt(0) > 96 && key.charCodeAt(0) < 123)) &&
-     key.length < 2) {
+    key.length < 2
+  ) {
     b[activeX][activeY].letter = key;
     activeX += 1;
     if (activeX == 5) {
       checkRow();
+    }
+  } //end if checking letters
+  if (keyCode == 8) {
+    //the backspace has been pressed.
+    if (activeX > 0) {
+      activeX -= 1;
+      b[activeX][activeY].letter = "";
     }
   }
 } //end keyReleased
