@@ -49,9 +49,7 @@ function keyReleased() {
   ) {
     b[activeX][activeY].letter = key;
     activeX += 1;
-    if (activeX == 5) {
-      checkRow();
-    }
+    
   } //end if checking letters
   if (keyCode == 8) {
     //the backspace has been pressed.
@@ -59,6 +57,10 @@ function keyReleased() {
       activeX -= 1;
       b[activeX][activeY].letter = "";
     }
+  }
+  if(keyCode == 13){
+    //the player has pressed the enter key
+    checkRow()
   }
 } //end keyReleased
 function checkRow() {
@@ -72,4 +74,19 @@ function checkRow() {
     theirGuess += b[i][activeY].letter;
   } //end loop
   console.log(theirGuess);
+  //thisLetter is going the letter we are checking
+  //in the solution
+  let thisLetter = b[0][0].letter;
+  if(secretWord.indexOf(thisLetter)>-1){
+    console.log("They guessed a letter");
+    if(secretWord.indexOf(thisLetter) == 0){
+      //they got the right letter
+      //in the right spot
+      console.log("Right letter, right spot.")
+    }else{
+      console.log("Right Letter, wrong spot.")
+    }
+  }
+  
+  
 } //end checkRow
