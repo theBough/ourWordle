@@ -76,19 +76,23 @@ function checkRow() {
   console.log(theirGuess);
   //thisLetter is going the letter we are checking
   //in the solution
-  let thisLetter = b[0][0].letter;
-  if(secretWord.indexOf(thisLetter)>-1){
-    console.log("They guessed a letter");
-    if(secretWord.indexOf(thisLetter) == 0){
+  for( i =0 ; i < b.length; i++){
+    let thisLetter = b[i][activeY].letter; 
+    if(secretWord.indexOf(thisLetter)>-1){
+    
+    if(secretWord.indexOf(thisLetter) == i){
       //they got the right letter
       //in the right spot
       console.log("Right letter, right spot.")
-      b[0][0].col ="#4CAF50"
+      b[i][activeY].col ="#4CAF50"
     }else{
       console.log("Right Letter, wrong spot.")
-       b[0][0].col = "#FFEB3B"
+       b[i][activeY].col = "#FFEB3B"
     }
   }
+  
+  }//end for loop
+  
   
   
 } //end checkRow
