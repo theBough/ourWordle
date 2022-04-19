@@ -26,12 +26,12 @@ function setup() {
   for (var i = 0; i < 5; i++) {
     b[i] = [];
     for (var j = 0; j < 6; j++) {
-      b[i][j] = new Box(20 + i * 55, 20 + j * 55, 50, 50, "");
+      b[i][j] = new Box(20 + i * 55, 20 + j * 55, 50, 50, "",255);
     } //end inside ForLoop
   } //end for loop
 } //end Setup
 function draw() {
-  background(220);
+  background(0);
   for (var i = 0; i < 5; i++) {
     for (var j = 0; j < 6; j++) {
       b[i][j].display();
@@ -83,8 +83,10 @@ function checkRow() {
       //they got the right letter
       //in the right spot
       console.log("Right letter, right spot.")
+      b[0][0].col ="#4CAF50"
     }else{
       console.log("Right Letter, wrong spot.")
+       b[0][0].col = "#FFEB3B"
     }
   }
   
