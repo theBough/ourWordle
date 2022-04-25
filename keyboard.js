@@ -1,6 +1,9 @@
-let k 
+let k = []
 
 function makeKeyboard(){
-  k = new Clickable();
-  k.locate(300,20)
+  for(i = 0 ; i<10 ; i++){
+    k[i] = new Clickable();
+    k[i].locate(20 + i * 25,400)
+  }
+  
 }//end makeKeyboard
