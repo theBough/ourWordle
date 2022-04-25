@@ -16,7 +16,7 @@ function preload() {
   words = loadStrings("list.txt");
 }
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(400, 500);
   activeX = 0;
   activeY = 0;
   //Randomly grab a word from our word list.
@@ -33,7 +33,9 @@ function setup() {
 makeKeyboard();
 function draw() {
   background(0);
-  k.draw();
+  for(i = 0 ; i<10 ; i++){
+  k[i].draw();
+  }//end loop
   for (var i = 0; i < 5; i++) {
     for (var j = 0; j < 6; j++) {
       b[i][j].display();
