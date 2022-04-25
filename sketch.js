@@ -30,8 +30,10 @@ function setup() {
     } //end inside ForLoop
   } //end for loop
 } //end Setup
+makeKeyboard();
 function draw() {
   background(0);
+  k.draw();
   for (var i = 0; i < 5; i++) {
     for (var j = 0; j < 6; j++) {
       b[i][j].display();
@@ -89,6 +91,8 @@ function checkRow() {
       console.log("Right Letter, wrong spot.")
        b[i][activeY].col = "#FFEB3B"
     }
+  }else{
+    b[i][activeY].col = 100
   }
   
   }//end for loop
