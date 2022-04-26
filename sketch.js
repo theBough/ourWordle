@@ -16,7 +16,7 @@ function preload() {
   words = loadStrings("list.txt");
 }
 function setup() {
-  createCanvas(400, 500);
+  createCanvas(400, 600);
   activeX = 0;
   activeY = 0;
   //Randomly grab a word from our word list.
@@ -26,16 +26,19 @@ function setup() {
   for (var i = 0; i < 5; i++) {
     b[i] = [];
     for (var j = 0; j < 6; j++) {
-      b[i][j] = new Box(20 + i * 55, 20 + j * 55, 50, 50, "",255);
+      b[i][j] = new Box(20 + i * 55, 20 + j * 55, 50, 50, "", 255);
     } //end inside ForLoop
   } //end for loop
 } //end Setup
 makeKeyboard();
 function draw() {
   background(0);
-  for(i = 0 ; i<10 ; i++){
-  k[i].draw();
-  }//end loop
+  for (j = 0; j < 3; j++) {
+    for (i = 0; i < 10; i++) {
+      k[j][i].draw();
+    } //end i loop
+  } //end j loop
+
   for (var i = 0; i < 5; i++) {
     for (var j = 0; j < 6; j++) {
       b[i][j].display();
@@ -53,7 +56,6 @@ function keyReleased() {
   ) {
     b[activeX][activeY].letter = key;
     activeX += 1;
-    
   } //end if checking letters
   if (keyCode == 8) {
     //the backspace has been pressed.
@@ -62,9 +64,9 @@ function keyReleased() {
       b[activeX][activeY].letter = "";
     }
   }
-  if(keyCode == 13){
+  if (keyCode == 13) {
     //the player has pressed the enter key
-    checkRow()
+    checkRow();
   }
 } //end keyReleased
 function checkRow() {
@@ -80,25 +82,20 @@ function checkRow() {
   console.log(theirGuess);
   //thisLetter is going the letter we are checking
   //in the solution
-  for( i =0 ; i < b.length; i++){
-    let thisLetter = b[i][activeY].letter; 
-    if(secretWord.indexOf(thisLetter)>-1){
-    
-    if(secretWord.indexOf(thisLetter) == i){
-      //they got the right letter
-      //in the right spot
-      console.log("Right letter, right spot.")
-      b[i][activeY].col ="#4CAF50"
-    }else{
-      console.log("Right Letter, wrong spot.")
-       b[i][activeY].col = "#FFEB3B"
+  for (i = 0; i < b.length; i++) {
+    let thisLetter = b[i][activeY].letter;
+    if (secretWord.indexOf(thisLetter) > -1) {
+      if (secretWord.indexOf(thisLetter) == i) {
+        //they got the right letter
+        //in the right spot
+        console.log("Right letter, right spot.");
+        b[i][activeY].col = "#4CAF50";
+      } else {
+        console.log("Right Letter, wrong spot.");
+        b[i][activeY].col = "#FFEB3B";
+      }
+    } else {
+      b[i][activeY].col = 100;
     }
-  }else{
-    b[i][activeY].col = 100
-  }
-  
-  }//end for loop
-  
-  
-  
+  } //end for loop
 } //end checkRow
