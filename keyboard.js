@@ -8,11 +8,12 @@ let order = [
 function makeKeyboard() {
   for (j = 0; j < 3; j++) {
     k[j] = []
-    for (i = 0; i < 10; i++) {
+    for (i = 0; i < order[j].length; i++) {
       k[j][i] = new Clickable();
       k[j][i].locate(20 + i * 25, 350 + j*55);
       k[j][i].width = 24;
       k[j][i].heigth = 50;
+      k[j][i].text = order[j][i]
     } //end i loop
   } //end j loop
 } //end makeKeyboard
