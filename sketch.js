@@ -34,7 +34,7 @@ makeKeyboard();
 function draw() {
   background(0);
   for (j = 0; j < 3; j++) {
-    for (i = 0; i < 10; i++) {
+    for (i = 0; i <  order[j].length; i++) {
       k[j][i].draw();
     } //end i loop
   } //end j loop
