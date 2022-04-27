@@ -14,6 +14,12 @@ function makeKeyboard() {
       k[j][i].width = 24;
       k[j][i].heigth = 50;
       k[j][i].text = order[j][i]
+      k[j][i].onHover = function(){
+        this.color = 100;
+      }
+      k[j][i].onOutside = function(){
+        this.color = 255;
+      }
     } //end i loop
   } //end j loop
 } //end makeKeyboard
